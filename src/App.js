@@ -10,14 +10,14 @@ const App = () => {
     );
   }
 
-  const [diceNumbers, setDiceNumbers] = useState(allNewDice())
+  const [dice, setDice] = useState(allNewDice())
 
-  const roll = () => {
-    setDiceNumbers(allNewDice())
+  const rollDice = () => {
+    setDice(allNewDice())
   }
 
-  const diceElements = diceNumbers.map(diceNumber => {
-    return <Dice value={diceNumber} />
+  const diceElements = dice.map(item => {
+    return <Dice value={item} />
   })
 
   return (
@@ -26,7 +26,7 @@ const App = () => {
           {diceElements}
       </div>
 
-      <button className="roll-btn" onClick={roll}>Roll</button>
+      <button className="roll-btn" onClick={rollDice}>Roll</button>
     </main>
   );
 }
