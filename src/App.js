@@ -10,10 +10,10 @@ const App = () => {
     );
   }
 
-  const [diceNumbers, setDiceNumbers] = useState(() => allNewDice())
+  const [diceNumbers, setDiceNumbers] = useState(allNewDice())
 
-  const diceElements = diceNumbers.map((diceNumber, index) => {
-    return <Dice key={index} value={diceNumber} />
+  const diceElements = diceNumbers.map(diceNumber => {
+    return <Dice value={diceNumber} />
   })
 
   return (
