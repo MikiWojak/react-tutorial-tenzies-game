@@ -3,6 +3,17 @@ import React from 'react';
 import Dice from './components/elements/Dice'
 
 const App = () => {
+  const allNewDice = () => {
+    const array = Array.from(
+      { length: 10 },
+      () => Math.floor(Math.random() * (6) + 1)
+    );
+
+    console.log(array)
+  }
+
+  allNewDice()
+
   return (
     <main>
       <div className="grid">
