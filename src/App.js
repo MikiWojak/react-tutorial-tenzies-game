@@ -4,10 +4,16 @@ import Dice from './components/elements/Dice'
 
 const App = () => {
   const allNewDice = () => {
-    return Array.from(
-      { length: 10 },
-      () => Math.floor(Math.random() * (6) + 1)
-    );
+    const newDice = []
+
+    for (let i = 0; i < 10; i++) {
+      newDice.push({
+        value: Math.ceil(Math.random() * (6)),
+        isHeld: false
+      })
+    }
+
+    return newDice
   }
 
   const [dice, setDice] = useState(allNewDice())
@@ -16,8 +22,8 @@ const App = () => {
     setDice(allNewDice())
   }
 
-  const diceElements = dice.map(item => {
-    return <Dice value={item} />
+  const diceElements = dice.map(singleDice => {
+    return <Dice value={singleDice.value} />
   })
 
   return (
