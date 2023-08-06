@@ -5,7 +5,9 @@ const Dice = (props) => {
 
     return (
         <div className="dice">
-            {value}
+            <h2 className="dice-num">
+                {value}
+            </h2>
         </div>
     )
 }
