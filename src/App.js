@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Dice from './components/elements/Dice'
 
@@ -8,24 +8,18 @@ const App = () => {
       { length: 10 },
       () => Math.floor(Math.random() * (6) + 1)
     );
-
   }
 
-  console.log(allNewDice())
+  const [diceNumbers, setDiceNumbers] = useState(() => allNewDice())
+
+  const diceElements = diceNumbers.map((diceNumber, index) => {
+    return <Dice key={index} value={diceNumber} />
+  })
 
   return (
     <main>
       <div className="grid">
-        <Dice value={1} />
-        <Dice value={2} />
-        <Dice value={3} />
-        <Dice value={4} />
-        <Dice value={5} />
-        <Dice value={6} />
-        <Dice value={1} />
-        <Dice value={1} />
-        <Dice value={1} />
-        <Dice value={1} />
+          {diceElements}
       </div>
     </main>
   );
