@@ -10,7 +10,7 @@ const App = () => {
     for (let i = 0; i < 10; i++) {
       newDice.push({
         value: Math.ceil(Math.random() * (6)),
-        isHeld: false,
+        isHeld: false,  // @TODO Change to true to check styles
         id: nanoid()
       })
     }
@@ -29,6 +29,7 @@ const App = () => {
       <Dice
         key={singleDice.id}
         value={singleDice.value}
+        isHeld={singleDice.isHeld}
       />)
   })
 
