@@ -25,18 +25,14 @@ const App = () => {
   }
 
   const holdDice = id => {
-    setDice(prevDice => {
-      return prevDice.map(singleDice => {
-        if(singleDice.id !== id) {
-          return singleDice
-        }
-
-        return {
+    setDice(prevDice => prevDice.map(singleDice => {
+      return singleDice.id === id ?
+        {
           ...singleDice,
-          isHeld: true //@TODO true or negation?
-        }
-      })
-    })
+          isHeld: !singleDice.isHeld
+        } :
+        singleDice
+    }))
   }
 
   const diceElements = dice.map(singleDice => {
