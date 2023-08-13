@@ -25,6 +25,10 @@ const App = () => {
   const [dice, setDice] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false)
 
+  useEffect(() => {
+    console.log("Dice state changed")
+  })
+
   const rollDice = () => {
     setDice(prevDice => prevDice.map(singleDice => {
       return singleDice.isHeld ?
@@ -43,10 +47,6 @@ const App = () => {
         singleDice
     }))
   }
-
-  useEffect(() => {
-    console.log("Dice state changed")
-  })
 
   const diceElements = dice.map(singleDice => {
     return (
