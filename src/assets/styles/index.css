@@ -41,7 +41,6 @@ main {
     height: 50px;
 
     border-radius: 10px;
-    background-color: #FFF;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
 
     display: flex;
