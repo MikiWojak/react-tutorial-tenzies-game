@@ -32,10 +32,9 @@ const App = () => {
     return (
       <Dice
         key={singleDice.id}
-        id={singleDice.id}
         value={singleDice.value}
         isHeld={singleDice.isHeld}
-        handleHoldDice={holdDice}
+        handleHoldDice={() => holdDice(singleDice.id)}
       />)
   })
 

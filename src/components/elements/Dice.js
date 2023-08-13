@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Dice = (props) => {
-    const { id, value, isHeld, handleHoldDice } = props
+    const { value, isHeld, handleHoldDice } = props
 
     const styles = {
         backgroundColor: isHeld ? '#59E391' : '#FFF'
@@ -11,7 +11,7 @@ const Dice = (props) => {
         <div
             className="dice"
             style={styles}
-            onClick={() => handleHoldDice(id)}
+            onClick={handleHoldDice}
         >
             <h2 className="dice-num">
                 {value}
