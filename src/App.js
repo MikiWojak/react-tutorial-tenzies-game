@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+import Confetti from 'react-confetti'
 
 import Dice from './components/elements/Dice'
 
@@ -82,6 +83,8 @@ const App = () => {
       <button className="roll-btn" onClick={rollDice}>
         { tenzies ? 'New Game' : 'Roll' }
       </button>
+
+      {tenzies && <Confetti />}
     </main>
   );
 }
