@@ -6,5 +6,72 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Karla', sans-serif;
+
+    height: 100vh;
+    display: flex;
+    padding: 30px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0B2434;
+}
+
+main {
+    display: flex;
+    max-width: 800px;
+    height: 400px;
+    padding: 35px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #F5F5F5;
+}
+
+.grid {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-num {
+    font-size: 2rem;
+}
+
+.roll-btn {
+    border: none;
+
+    margin-top: 25px;
+    background-color: #5035FF;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    width: 100px;
+    height: 50px;
+    font-family: 'Karla', sans-serif;
+    cursor: pointer;
+}
+
+.roll-btn:focus {
+    outline: none;
+}
+
+.roll-btn:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
