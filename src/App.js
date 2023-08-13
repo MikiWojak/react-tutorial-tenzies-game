@@ -33,7 +33,7 @@ const App = () => {
       singleDice.value === firstValue
     ))
 
-    if(allHeld && allSameValue) {
+    if (allHeld && allSameValue) {
       setTenzies(true)
     }
   }, [dice])
