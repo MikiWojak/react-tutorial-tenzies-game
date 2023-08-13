@@ -4,15 +4,19 @@ import { nanoid } from 'nanoid';
 import Dice from './components/elements/Dice'
 
 const App = () => {
+  const generateNewDice = () => {
+    return {
+      value: Math.ceil(Math.random() * (6)),
+      isHeld: false,
+      id: nanoid()
+    }
+  }
+
   const allNewDice = () => {
     const newDice = []
 
     for (let i = 0; i < 10; i++) {
-      newDice.push({
-        value: Math.ceil(Math.random() * (6)),
-        isHeld: false,
-        id: nanoid()
-      })
+      newDice.push(generateNewDice())
     }
 
     return newDice
@@ -24,11 +28,7 @@ const App = () => {
     setDice(prevDice => prevDice.map(singleDice => {
       return singleDice.isHeld ?
         singleDice :
-        {
-          value: Math.ceil(Math.random() * (6)),
-          isHeld: false,
-          id: nanoid()
-        }
+        generateNewDice()
     }))
   }
 
