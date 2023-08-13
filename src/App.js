@@ -35,12 +35,17 @@ const App = () => {
 
     if(allHeld && allSameValue) {
       setTenzies(true)
-
-      console.log("You won!")
     }
   }, [dice])
 
   const rollDice = () => {
+    if (tenzies) {
+      setTenzies(false)
+      setDice(allNewDice())
+
+      return
+    }
+
     setDice(prevDice => prevDice.map(singleDice => {
       return singleDice.isHeld ?
         singleDice :
