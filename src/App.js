@@ -24,12 +24,18 @@ const App = () => {
     setDice(allNewDice())
   }
 
+  const holdDice = id => {
+    console.log({ id })
+  }
+
   const diceElements = dice.map(singleDice => {
     return (
       <Dice
         key={singleDice.id}
+        id={singleDice.id}
         value={singleDice.value}
         isHeld={singleDice.isHeld}
+        handleHoldDice={holdDice}
       />)
   })
 
