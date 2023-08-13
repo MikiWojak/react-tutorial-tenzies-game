@@ -26,23 +26,18 @@ const App = () => {
   const [tenzies, setTenzies] = useState(false)
 
   useEffect(() => {
-    let isTenzies = true
-    let number = dice[0].number
+    const allHeld = dice.every(singleDice => singleDice.isHeld)
+    const firstValue = dice[0].value
+    const allSameValue = dice.every(singleDice => (
+      singleDice.value === firstValue
+    ))
 
-    for (let i = 0; i < dice.length; i++) {
-      if(number !== dice[i].number || !dice[i].isHeld) {
-        isTenzies = false
+    if(allHeld && allSameValue) {
+      setTenzies(true)
 
-        break
-      }
-    }
-
-    setTenzies(isTenzies)
-
-    if(isTenzies) {
       console.log("You won!")
     }
-  })
+  }, [dice])
 
   const rollDice = () => {
     setDice(prevDice => prevDice.map(singleDice => {
