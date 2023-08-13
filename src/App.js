@@ -26,7 +26,22 @@ const App = () => {
   const [tenzies, setTenzies] = useState(false)
 
   useEffect(() => {
-    console.log("Dice state changed")
+    let isTenzies = true
+    let number = dice[0].number
+
+    for (let i = 0; i < dice.length; i++) {
+      if(number !== dice[i].number || !dice[i].isHeld) {
+        isTenzies = false
+
+        break
+      }
+    }
+
+    setTenzies(isTenzies)
+
+    if(isTenzies) {
+      console.log("You won!")
+    }
   })
 
   const rollDice = () => {
