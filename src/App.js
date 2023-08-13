@@ -10,7 +10,7 @@ const App = () => {
     for (let i = 0; i < 10; i++) {
       newDice.push({
         value: Math.ceil(Math.random() * (6)),
-        isHeld: false,  // @TODO Change to true to check styles
+        isHeld: false,
         id: nanoid()
       })
     }
@@ -25,7 +25,18 @@ const App = () => {
   }
 
   const holdDice = id => {
-    console.log({ id })
+    setDice(prevDice => {
+      return prevDice.map(singleDice => {
+        if(singleDice.id !== id) {
+          return singleDice
+        }
+
+        return {
+          ...singleDice,
+          isHeld: true //@TODO true or negation?
+        }
+      })
+    })
   }
 
   const diceElements = dice.map(singleDice => {
